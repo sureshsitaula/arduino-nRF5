@@ -42,6 +42,21 @@ POSSIBILITY OF SUCH DAMAGE.
  
 /* Differences between latest nRF52 headers and nRF52810 headers. */
 
+/* UART */
+/* The registers PSELRTS, PSELTXD, PSELCTS, PSELRXD were restructured into a struct. */
+#ifndef PSELRTS
+    #define PSELRTS       PSEL.RTS
+#endif
+#ifndef PSELTXD    
+    #define PSELTXD       PSEL.TXD
+#endif
+#ifndef PSELCTS
+    #define PSELCTS       PSEL.CTS
+#endif
+#ifndef PSELRXD
+    #define PSELRXD       PSEL.RXD
+#endif
+
 /* Interrupt service routines handlers. Note that handlers SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler and 
    SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler are not redefined since functionality is not equivalent. */
 #ifndef COMP_LPCOMP_IRQHandler
