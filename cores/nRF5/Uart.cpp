@@ -175,7 +175,7 @@ void Uart::end()
   nrfUart->TASKS_STOPTX = 0x1UL;
 
   nrfUart->ENABLE = UART_ENABLE_ENABLE_Disabled;
-
+ 
   nrfUart->PSELTXD = 0xFFFFFFFF;
   nrfUart->PSELRXD = 0xFFFFFFFF;
 
